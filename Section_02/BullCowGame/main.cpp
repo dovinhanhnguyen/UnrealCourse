@@ -4,21 +4,15 @@
 using namespace std;
 
 void PrintIntro();
-string GetGuessAndPrintBack();
+void PlayGame();
+string GetGuess();
 
 // The entry point for our application
 int main() 
 {
 	PrintIntro();
-
-	// loop for the number of turns asking for guesses
-	constexpr int NUMBER_OF_TURNS = 5;
-	for (int i = 1; i <= NUMBER_OF_TURNS; i++)
-	{
-		GetGuessAndPrintBack();
-	}
-
-	return 0;
+	PlayGame();
+	return 0; // exit the application
 }
 
 // Introduce the game
@@ -30,12 +24,23 @@ void PrintIntro()
 	return; // void function so returns nothing
 }
 
+// Play the game once
+void PlayGame()
+{
+	// loop for the number of turns asking for and printing out guesses
+	constexpr int NUMBER_OF_TURNS = 5;
+	for (int i = 1; i <= NUMBER_OF_TURNS; i++)
+	{
+		string Guess = GetGuess();
+		cout << "Your guess is " << Guess << endl << endl;
+	}
+}
+
 // Get a guess from the player
-string GetGuessAndPrintBack()
+string GetGuess()
 {
 	string Guess = "";
 	cout << "Enter your guess: ";
 	getline(cin, Guess); // problem with cin: cin reads until a space character then it stops
-	cout << "Your guess is " << Guess << endl << endl;
 	return Guess;
 }
