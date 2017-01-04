@@ -11,8 +11,12 @@ int main()
 {
 	PrintIntro();
 
-	GetGuessAndPrintBack();
-	GetGuessAndPrintBack();
+	// loop for the number of turns asking for guesses
+	constexpr int NUMBER_OF_TURNS = 5;
+	for (int i = 1; i <= NUMBER_OF_TURNS; i++)
+	{
+		GetGuessAndPrintBack();
+	}
 
 	return 0;
 }
@@ -22,7 +26,7 @@ void PrintIntro()
 {
 	constexpr int WORD_LENGTH = 5; // const so must assign value immediately; this is only in the scope of this function
 	cout << "Welcome to Bulls and Cows, a fun word game!" << endl;
-	cout << "Can you guess the " << WORD_LENGTH << " letter isogram I'm thinking of?" << endl;
+	cout << "Can you guess the " << WORD_LENGTH << " letter isogram I'm thinking of?" << endl << endl;
 	return; // void function so returns nothing
 }
 
@@ -32,6 +36,6 @@ string GetGuessAndPrintBack()
 	string Guess = "";
 	cout << "Enter your guess: ";
 	getline(cin, Guess); // problem with cin: cin reads until a space character then it stops
-	cout << "Your guess is " << Guess << endl;
+	cout << "Your guess is " << Guess << endl << endl;
 	return Guess;
 }
