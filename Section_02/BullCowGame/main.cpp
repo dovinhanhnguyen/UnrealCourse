@@ -13,7 +13,7 @@ int main()
 	/*Get a guess from the player*/
 	string Guess = "";
 	cout << "Enter your guess: ";
-	cin >> Guess;
+	getline(cin, Guess); // problem with cin: cin reads until a space character then it stops
 
 	/*Return the guess back to them*/
 	cout << "Your guess is " << Guess << endl;
