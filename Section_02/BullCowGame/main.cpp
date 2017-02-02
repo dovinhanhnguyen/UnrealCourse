@@ -6,12 +6,14 @@ using namespace std;
 void PrintIntro();
 void PlayGame();
 string GetGuess();
+bool AskToPlayAgain();
 
 // The entry point for our application
 int main() 
 {
 	PrintIntro();
 	PlayGame();
+	cout << AskToPlayAgain();
 	return 0; // exit the application
 }
 
@@ -43,4 +45,13 @@ string GetGuess()
 	cout << "Enter your guess: ";
 	getline(cin, Guess); // problem with cin: cin reads until a space character then it stops
 	return Guess;
+}
+
+bool AskToPlayAgain()
+{
+	cout << "Do you want to play again? ";
+	string Response = "";
+	getline(cin, Response);
+
+	return (Response[0] == 'y') || (Response[0] == 'Y'); // Response[0] to get the first character of Response; character type so quotes ''
 }
