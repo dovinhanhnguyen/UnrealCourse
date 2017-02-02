@@ -11,9 +11,13 @@ bool AskToPlayAgain();
 // The entry point for our application
 int main() 
 {
-	PrintIntro();
-	PlayGame();
-	cout << AskToPlayAgain();
+	bool bPlayAgain = false; //  convention: prefix b for a boolean
+	do {
+		PrintIntro();
+		PlayGame();
+		bPlayAgain = AskToPlayAgain();
+	}
+	while (bPlayAgain);
 	return 0; // exit the application
 }
 
@@ -49,7 +53,7 @@ string GetGuess()
 
 bool AskToPlayAgain()
 {
-	cout << "Do you want to play again? ";
+	cout << "Do you want to play again? (y/n) ";
 	string Response = "";
 	getline(cin, Response);
 
