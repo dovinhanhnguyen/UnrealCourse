@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include "FBullCowGame.h"
 
 void PrintIntro();
 void PlayGame();
@@ -31,6 +32,9 @@ void PrintIntro()
 // Play the game once
 void PlayGame()
 {
+	FBullCowGame Player1Game; // instantiate (ie create a new instant of) a new game
+	FBullCowGame Player2Game;
+
 	// loop for the number of turns asking for and printing out guesses
 	constexpr int NUMBER_OF_TURNS = 5;
 	for (int i = 1; i <= NUMBER_OF_TURNS; i++)

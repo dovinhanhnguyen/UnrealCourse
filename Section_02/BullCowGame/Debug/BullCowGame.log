@@ -1,3 +1,5 @@
-﻿  FBullCowGame.cpp
+﻿  main.cpp
+c:\users\vinhanh\documents\repos\unrealcourse\section_02\bullcowgame\main.cpp(35): warning C4101: 'Player1Game': unreferenced local variable
+c:\users\vinhanh\documents\repos\unrealcourse\section_02\bullcowgame\main.cpp(36): warning C4101: 'Player2Game': unreferenced local variable
   BullCowGame.vcxproj -> C:\Users\VinhAnh\Documents\repos\UnrealCourse\Section_02\Debug\BullCowGame.exe
   BullCowGame.vcxproj -> C:\Users\VinhAnh\Documents\repos\UnrealCourse\Section_02\Debug\BullCowGame.pdb (Full PDB)
