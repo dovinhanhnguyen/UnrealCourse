@@ -1,11 +1,9 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
-
 void PrintIntro();
 void PlayGame();
-string GetGuess();
+std::string GetGuess();
 bool AskToPlayAgain();
 
 // The entry point for our application
@@ -25,8 +23,8 @@ int main()
 void PrintIntro()
 {
 	constexpr int WORD_LENGTH = 5; // const so must assign value immediately; this is only in the scope of this function
-	cout << "Welcome to Bulls and Cows, a fun word game!" << endl;
-	cout << "Can you guess the " << WORD_LENGTH << " letter isogram I'm thinking of?" << endl << endl;
+	std::cout << "Welcome to Bulls and Cows, a fun word game!" << std::endl;
+	std::cout << "Can you guess the " << WORD_LENGTH << " letter isogram I'm thinking of?" << std::endl << std::endl;
 	return; // void function so returns nothing
 }
 
@@ -37,25 +35,25 @@ void PlayGame()
 	constexpr int NUMBER_OF_TURNS = 5;
 	for (int i = 1; i <= NUMBER_OF_TURNS; i++)
 	{
-		string Guess = GetGuess();
-		cout << "Your guess is " << Guess << endl << endl;
+		std::string Guess = GetGuess();
+		std::cout << "Your guess is " << Guess << std::endl << std::endl;
 	}
 }
 
 // Get a guess from the player
-string GetGuess()
+std::string GetGuess()
 {
-	string Guess = "";
-	cout << "Enter your guess: ";
-	getline(cin, Guess); // problem with cin: cin reads until a space character then it stops
+	std::string Guess = "";
+	std::cout << "Enter your guess: ";
+	getline(std::cin, Guess); // problem with cin: cin reads until a space character then it stops
 	return Guess;
 }
 
 bool AskToPlayAgain()
 {
-	cout << "Do you want to play again? (y/n) ";
-	string Response = "";
-	getline(cin, Response);
+	std::cout << "Do you want to play again? (y/n) ";
+	std::string Response = "";
+	getline(std::cin, Response);
 
 	return (Response[0] == 'y') || (Response[0] == 'Y'); // Response[0] to get the first character of Response; character type so quotes ''
 }
